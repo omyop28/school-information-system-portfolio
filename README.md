@@ -1,244 +1,211 @@
 # School Information System
 
-A full-stack school information and application platform developed for **SMA Negeri 1 Biak Kota**, built with **CodeIgniter 4, PHP, MySQL, JavaScript, HTML, and CSS**.
+A full-stack school information and application platform developed for **SMA Negeri 1 Biak Kota** using **CodeIgniter 4, PHP, MySQL, JavaScript, HTML, and CSS**.
 
-The project integrates public information services, administrative management, student admission, computer-based examinations, GPS-based teacher attendance, real-time content synchronization, image optimization, Android access, and Windows desktop integration.
+The platform combines a public website, administrative dashboard, dynamic student admission, computer-based examinations, GPS-based teacher attendance, live content synchronization, Android WebView access, and a Windows Electron client within one integrated system.
 
 > **Portfolio Notice**
 >
-> This repository is a technical portfolio showcase of a private production system.  
-> Production source code, credentials, cryptographic keys, personal data, internal configuration, and other security-sensitive components are not publicly available.
+> This repository is a technical portfolio showcase of a private production-oriented system. Production source code, credentials, cryptographic keys, personal data, internal configuration, and other security-sensitive components are intentionally excluded.
 
 ---
 
-## Overview
+## Project Overview
 
-The system was designed as an integrated platform for school information management and digital services.
+The system was designed as an integrated school platform rather than a collection of isolated pages.
 
-It combines multiple modules within one backend architecture while maintaining responsive access across desktop browsers, Android devices, and desktop applications.
+Core areas include:
 
-The main development focus includes:
-
-- Full-stack web development
-- Backend architecture
-- Database integration
-- Responsive user interfaces
-- Dynamic form systems
-- Real-time content synchronization
-- Mobile WebView integration
-- Desktop application integration
-- Security testing
-- Performance optimization
-- Debugging and production-oriented development
+- Public school website
+- Administration dashboard
+- PPDB / SPMB student admission
+- USBK computer-based examination
+- GPS-based teacher attendance
+- Live Sync for selected public information
+- Automatic WebP image processing and optimization
+- Android client using Java + Android WebView
+- Windows desktop client using Electron + Node.js
+- Authentication, authorization, and access-control engineering
+- Security testing and vulnerability assessment
+- Debugging and performance optimization
 
 ---
 
-## Main Features
+## Featured Screenshots
 
 ### Public Website
 
-The public-facing website provides school information through responsive pages including:
+![Public Homepage](screenshots/public/01-homepage.png)
 
-- Home
-- School Profile
-- Academic Information
-- News and Information
-- Student Admission Information
-- Examination Information
-- Teacher Attendance Information
+The public interface provides responsive access to school information and operational modules.
 
-Content managed from the administration dashboard can be synchronized to public pages without requiring a full browser refresh.
+### PPDB / SPMB
+
+![PPDB Public Portal](screenshots/ppdb/01-ppdb-home.png)
+
+The admission module supports configurable registration workflows, admission paths, schedules, quotas, documents, re-registration, and administrative processing.
+
+### USBK
+
+![USBK Public Portal](screenshots/usbk/01-usbk-portal.png)
+
+The USBK module supports computer-based examination workflows, including schedules, announcements, participant access, waiting-room handling, and controlled active-exam state.
+
+### GPS-Based Teacher Attendance
+
+![Teacher Attendance](screenshots/attendance/01-attendance-page.png)
+
+The attendance workflow integrates device location, accuracy handling, check-in/check-out state, attendance status, late attendance handling, and duplicate-submission protection.
 
 ---
 
 ## Administration Dashboard
 
-The administration system provides centralized management for website content and operational modules.
+### Main Dashboard
 
-Key capabilities include:
+![Administration Dashboard](screenshots/admin/03-dashboard.png)
 
-- Content management
-- Image management
-- Student admission configuration
-- Examination management
-- Teacher attendance management
-- Dynamic form configuration
-- Schedule management
-- Registration monitoring
-- Document management
-- Administrative workflows
+### Content Management
 
-The development approach prioritizes preserving existing business logic and applying minimal, targeted changes when fixing or improving stable functionality.
+![Content Management](screenshots/admin/02-content-management.png)
 
----
+### PPDB Management
 
-## PPDB / SPMB — Student Admission System
+![PPDB Administration](screenshots/admin/04-ppdb-management.png)
 
-The admission module supports dynamic registration workflows.
+### USBK Management
 
-Selected capabilities include:
+![USBK Administration](screenshots/admin/05-usbk-management.png)
 
-- Dynamic registration forms
-- Configurable form sections
-- Configurable fields
-- Admission paths
-- Admission quotas
-- Registration schedules
-- Registration status
-- Document requirements
-- Applicant data correction
-- Re-registration
-- Registration documents
-- Audit records
+### Attendance Management
 
-The form structure can be configured through the administration system without requiring hard-coded registration forms for every admission period.
+![Attendance Administration](screenshots/admin/01-attendance-management.png)
+
+The administration layer centralizes website content, registration configuration, examination management, attendance operations, schedules, documents, and related workflows.
 
 ---
 
-## USBK — Computer-Based Examination
+## Windows Desktop Client
 
-The computer-based examination module provides digital examination functionality.
+![Windows Electron Application](screenshots/windows/01-windows-app.png)
 
-Selected areas include:
+The Windows client uses **Electron + Node.js** as a desktop application layer over the same web platform and backend.
 
-- Student participants
-- Examination configuration
-- Examination schedules
-- Examination announcements
-- Examination rules
-- Waiting room
-- Examination session handling
-
-Real-time updates are intentionally controlled during active examinations to protect answers, timers, navigation state, and submission processes.
+The project intentionally reuses the existing backend and business rules instead of duplicating core logic in each client.
 
 ---
 
-## GPS-Based Teacher Attendance
+## Android Client
 
-The teacher attendance module uses device location data as part of the attendance workflow.
-
-Features include:
-
-- Check-in
-- Check-out
-- GPS location acquisition
-- Location accuracy validation
-- Attendance status
-- Late attendance handling
-- Duplicate attendance protection
-
-The system separates informational updates from sensitive GPS and submission operations to avoid disrupting an active attendance process.
-
----
-
-## Live Sync
-
-The project includes a live synchronization mechanism for selected public information.
-
-Live synchronization is used for:
-
-- Home content
-- School profile
-- Academic information
-- Public announcements
-- Student admission information
-- Admission schedules
-- Admission quotas
-- Admission status
-- Attendance information
-- Examination portal information
-- Examination schedules
-- Examination announcements
-
-Interactive processes such as active registration forms, GPS submissions, and live examinations are protected from unsafe full-page synchronization.
-
----
-
-## Image Optimization
-
-Uploaded website images can be processed through a reusable image optimization workflow.
-
-The system supports:
-
-- Automatic image processing
-- WebP conversion
-- File-size optimization
-- Reusable upload handling
-- Administrative image replacement
-
-The goal is to reduce bandwidth and improve page-loading performance without requiring administrators to manually optimize every uploaded image.
-
----
-
-## Android Application
-
-An Android application was developed using:
+The Android application is built with:
 
 - Java
 - Android SDK
 - Android WebView
 - Gradle
 
-The Android application acts as an application layer for accessing the school platform from mobile devices.
+It uses the same web platform as the primary interface while keeping Android-specific integration in the application layer.
 
-Development testing included installation and testing on a physical Android device.
+This is a **hybrid application architecture**, not a separate fully native UI implementation.
 
----
-
-## Windows Desktop Application
-
-The project also includes desktop application development using:
-
-- Electron
-- Node.js
-- Web technologies
-
-The desktop application is intended to provide access to the same school platform through a Windows application environment.
+A device-specific Android screenshot will be added when a capture that clearly shows the application running inside the Android environment is available.
 
 ---
 
 ## Technology Stack
 
-### Backend
-
-- PHP
-- CodeIgniter 4
-- MySQL
-- REST-oriented backend integration
-
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Responsive Web Design
-
-### Mobile
-
-- Java
-- Android SDK
-- Android WebView
-- Gradle
-
-### Desktop
-
-- Electron
-- Node.js
-
-### Development & Security
-
-- Git
-- GitHub
-- OWASP ZAP
-- Nuclei
-- Browser Developer Tools
-- Android debugging tools
+| Area | Technologies |
+| --- | --- |
+| Backend | PHP, CodeIgniter 4 |
+| Database | MySQL |
+| Frontend | HTML5, CSS3, JavaScript |
+| Mobile | Java, Android SDK, Android WebView, Gradle |
+| Desktop | Electron, Node.js |
+| Version Control | Git, GitHub |
+| Security Testing | OWASP ZAP, Nuclei |
+| Integration | REST-oriented backend integration |
 
 ---
 
-## Architecture
+## Core Modules
 
-High-level architecture:
+### Public Website
+
+Responsive public information pages include school profile, academic information, announcements, admission information, examination information, and attendance-related information.
+
+Selected public content can be updated through Live Sync without requiring a full-page refresh.
+
+### PPDB / SPMB
+
+The student admission module includes:
+
+- Dynamic form builder
+- Configurable form sections and fields
+- Admission paths and quotas
+- Registration schedules
+- Registration status
+- Upload requirements
+- Applicant data correction
+- Re-registration
+- Document handling
+- Audit records
+
+Dynamic configuration reduces the need to hard-code a new registration form for each admission period.
+
+### USBK
+
+The examination module includes:
+
+- Participant management
+- Examination configuration
+- Schedules
+- Announcements
+- Rules
+- Waiting room
+- Examination session handling
+
+Active examination states are protected from unsafe full-page synchronization so answers, timers, navigation state, and submission workflows are not overwritten.
+
+### GPS-Based Teacher Attendance
+
+The attendance module includes:
+
+- Check-in
+- Check-out
+- GPS acquisition
+- Location-accuracy handling
+- Attendance status
+- Late attendance handling
+- Duplicate attendance protection
+
+Informational synchronization is separated from active GPS and submission operations.
+
+### Live Sync
+
+Live Sync is used selectively for public information such as:
+
+- Home content
+- School profile
+- Academic information
+- Announcements
+- PPDB information, schedules, quotas, and status
+- Attendance information
+- USBK portal information, schedules, and announcements
+
+Interactive states such as partially completed admission forms, GPS submission, and active examinations are deliberately protected.
+
+### Image Processing
+
+The project includes reusable image-upload processing with:
+
+- Automatic WebP conversion
+- File-size optimization
+- Reusable upload handling
+- Administrative image replacement
+
+---
+
+## High-Level Architecture
 
 ```text
                      ┌──────────────────────┐
@@ -257,10 +224,12 @@ High-level architecture:
                     ┌──────────────────────┐
                     │  CodeIgniter 4 App   │
                     │                      │
+                    │ Routing              │
                     │ Controllers          │
                     │ Validation           │
-                    │ Business Logic       │
                     │ Authentication       │
+                    │ Authorization        │
+                    │ Business Logic       │
                     └──────────┬───────────┘
                                │
                                ▼
@@ -275,104 +244,48 @@ High-level architecture:
                     └──────────────────────┘
 ```
 
-More detailed architecture documentation will be available in:
-
-```text
-docs/architecture.md
-```
+More detail: [System Architecture](docs/architecture.md)
 
 ---
 
 ## Security Engineering
 
-Security is treated as part of the development process rather than as a separate final step.
+Security is treated as part of the development lifecycle rather than as a final standalone step.
 
-Security-related work includes:
+Areas covered by the project include:
 
 - Authentication
 - Authorization
 - Access control
 - CSRF protection
-- Input validation
+- Server-side validation
 - Output handling
-- File upload validation
+- File-upload validation
+- Application-access architecture
+- Device registration and approval
 - Security testing
-- Vulnerability scanning
-- Application access architecture
-- Device-access research and development
+- Vulnerability assessment
 
-Security testing tools used during development include:
+Security tools used during development include **OWASP ZAP** and **Nuclei**.
 
-- OWASP ZAP
-- Nuclei
+The application-authentication gateway and device-access architecture are separated from normal user authentication and business permissions. Sensitive production implementation details are not published.
 
-Application authentication gateway and stronger device-level access controls are being developed separately from the public portfolio repository.
-
-Sensitive implementation details are intentionally excluded from this repository.
+More detail: [Security Overview](docs/security-overview.md)
 
 ---
 
-## Development Principles
+## Engineering Approach
 
-This project follows several practical engineering principles:
+The project follows a conservative maintenance strategy:
 
 1. Preserve stable business logic whenever possible.
-2. Identify the root cause before applying a fix.
-3. Prefer small and targeted changes.
-4. Validate changes after implementation.
-5. Protect user data and private configuration.
-6. Separate public information updates from sensitive active workflows.
-7. Test changes on the actual target environment when possible.
-
----
-
-## Screenshots
-
-Screenshots will be organized by module:
-
-```text
-screenshots/
-├── public/
-├── admin/
-├── ppdb/
-├── usbk/
-├── attendance/
-├── android/
-└── windows/
-```
-
-Only screenshots that do not expose personal information, credentials, private documents, internal security configuration, or production-sensitive information will be published.
-
----
-
-## Project Structure
-
-```text
-school-information-system-portfolio/
-│
-├── README.md
-│
-├── screenshots/
-│   ├── public/
-│   ├── admin/
-│   ├── ppdb/
-│   ├── usbk/
-│   ├── attendance/
-│   ├── android/
-│   └── windows/
-│
-├── docs/
-│   ├── architecture.md
-│   ├── features.md
-│   └── security-overview.md
-│
-├── diagrams/
-│   ├── system-architecture.png
-│   └── authentication-flow.png
-│
-└── demo/
-    └── README.md
-```
+2. Identify the root cause before changing code.
+3. Prefer small, targeted changes over broad rewrites.
+4. Validate behavior after implementation.
+5. Keep server-side rules authoritative.
+6. Protect active user workflows from unsafe synchronization.
+7. Test on the actual target environment when practical.
+8. Keep production secrets and personal data out of public repositories.
 
 ---
 
@@ -385,41 +298,49 @@ Responsibilities include:
 - Backend development
 - Frontend development
 - Database integration
-- Dynamic form implementation
-- Administrative dashboard development
+- Dynamic-form implementation
+- Administration dashboard development
 - Android application integration
 - Windows desktop application integration
+- REST/backend integration
 - Debugging
 - Performance optimization
 - Security testing
 - Git and GitHub workflow
 - Deployment preparation
-- System maintenance and iterative improvement
+- Iterative system maintenance
 
 ---
 
 ## Technical Challenges
 
-Some of the main engineering challenges addressed during development include:
+Key engineering challenges addressed during development include:
 
-- Maintaining multiple integrated school modules within a single application
-- Protecting active user workflows during real-time content synchronization
-- Building dynamic admission forms
+- Integrating multiple operational modules into one application
+- Building configurable admission workflows
+- Preserving user state during live synchronization
 - Managing examination state safely
 - Integrating GPS-based attendance
-- Maintaining responsive layouts across desktop and Android devices
-- Optimizing uploaded images automatically
-- Integrating a web platform into Android WebView
-- Preparing the platform for desktop application access
+- Supporting responsive desktop and mobile access
+- Automatically optimizing uploaded images
+- Reusing one backend across browser, Android, and Windows clients
 - Improving security without breaking established business logic
 
 ---
 
-## Privacy
+## Documentation
 
-This project involves systems that may process sensitive school information.
+Detailed technical documentation is available in:
 
-For privacy and security reasons, this repository does **not** contain:
+- [Features](docs/features.md)
+- [System Architecture](docs/architecture.md)
+- [Security Overview](docs/security-overview.md)
+
+---
+
+## Privacy and Repository Scope
+
+This public portfolio does **not** include:
 
 - Student personal data
 - Teacher personal data
@@ -430,29 +351,27 @@ For privacy and security reasons, this repository does **not** contain:
 - `.env` files
 - Database credentials
 - API tokens
-- Private keys
-- Application signing keys
+- Private cryptographic keys
+- Android signing keys
 - Administrative credentials
-- Sensitive production configuration
+- Detailed production security configuration
 
 ---
 
 ## Project Status
 
-**Active Development / Private Production System**
+**Active Development / Private Production-Oriented System**
 
-The complete production source code is maintained privately.
+The complete application source and production configuration are maintained privately.
 
-This repository exists specifically as a professional portfolio and technical documentation showcase.
+This repository exists specifically as a professional engineering portfolio and technical documentation showcase.
 
-A controlled demonstration may be provided upon request where appropriate.
+A controlled demonstration may be provided on request where appropriate.
 
 ---
 
-## Developer
+## Developer Profile
 
 **Full-Stack Web & Application Developer**
-
-Primary areas:
 
 `PHP` · `CodeIgniter 4` · `MySQL` · `JavaScript` · `HTML` · `CSS` · `Android WebView` · `Electron` · `REST API` · `Application Security` · `Git` · `GitHub`
