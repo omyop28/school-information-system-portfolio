@@ -1,0 +1,59 @@
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Database / backups
+*.sql
+*.sqlite
+*.db
+*.bak
+*.backup
+*.dump
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+*.cache
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# Operating system
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Dependencies / build artifacts
+vendor/
+node_modules/
+build/
+dist/
+
+# Sensitive/private data
+private/
+secrets/
+credentials/
+uploads/private/
+student-data/
+teacher-data/
+registration-documents/
+
+# Production configuration
+config/production/
+production/
