@@ -108,7 +108,15 @@ It uses the same web platform as the primary interface while keeping Android-spe
 
 This is a **hybrid application architecture**, not a separate fully native UI implementation.
 
-A device-specific Android screenshot will be added when a capture that clearly shows the application running inside the Android environment is available.
+### Android Application Screenshots
+
+![Android Application - Public Homepage](screenshots/android/01-android-app.png)
+
+![Android Application - Public Module](screenshots/android/02-android-app.png)
+
+![Android Application - Mobile Navigation](screenshots/android/03-android-app.png)
+
+These captures show the school platform running through the Android application layer on a mobile device.
 
 ---
 
