@@ -207,44 +207,21 @@ The project includes reusable image-upload processing with:
 
 ## High-Level Architecture
 
-```text
-                     ┌──────────────────────┐
-                     │      End Users       │
-                     └──────────┬───────────┘
-                                │
-              ┌─────────────────┼─────────────────┐
-              │                 │                 │
-              ▼                 ▼                 ▼
-      Web Browser       Android Application   Windows App
-                           WebView              Electron
-              │                 │                 │
-              └─────────────────┼─────────────────┘
-                                │
-                                ▼
-                    ┌──────────────────────┐
-                    │  CodeIgniter 4 App   │
-                    │                      │
-                    │ Routing              │
-                    │ Controllers          │
-                    │ Validation           │
-                    │ Authentication       │
-                    │ Authorization        │
-                    │ Business Logic       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │        MySQL         │
-                    │                      │
-                    │ Website Content      │
-                    │ PPDB / SPMB          │
-                    │ USBK                 │
-                    │ Attendance           │
-                    │ Audit Data           │
-                    └──────────────────────┘
-```
+![System Architecture](diagrams/system-architecture.png)
+
+The diagram above summarizes how web, Android, and Windows clients connect to the CodeIgniter 4 backend, shared application modules, Live Sync services, and MySQL storage.
 
 More detail: [System Architecture](docs/architecture.md)
+
+---
+
+## Authentication & Access Flow
+
+![Authentication Flow](diagrams/authentication-flow.png)
+
+The current implementation uses **CodeIgniter Shield** for authentication together with role/group checks and administrative access filters before protected modules are reached.
+
+The diagram also separates the **planned security roadmap** from the implemented authentication path. Planned items include stronger device registration, application-only access controls, and browser restriction mechanisms.
 
 ---
 
@@ -252,7 +229,7 @@ More detail: [System Architecture](docs/architecture.md)
 
 Security is treated as part of the development lifecycle rather than as a final standalone step.
 
-Areas covered by the project include:
+Implemented and verified areas include:
 
 - Authentication
 - Authorization
@@ -261,14 +238,13 @@ Areas covered by the project include:
 - Server-side validation
 - Output handling
 - File-upload validation
-- Application-access architecture
-- Device registration and approval
+- Administrative access filtering
 - Security testing
 - Vulnerability assessment
 
 Security tools used during development include **OWASP ZAP** and **Nuclei**.
 
-The application-authentication gateway and device-access architecture are separated from normal user authentication and business permissions. Sensitive production implementation details are not published.
+Planned security work includes stronger device verification, application-authentication gateway controls, and browser-access restriction. These roadmap items are intentionally distinguished from features already implemented in the current source.
 
 More detail: [Security Overview](docs/security-overview.md)
 
